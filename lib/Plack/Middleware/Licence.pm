@@ -10,15 +10,13 @@ use Plack::Util;
 
 our $VERSION = '0.1';
 
-#ABSTRACT attach licence content to your files
-
 =head1 NAME
 
 Plack::Middleware::Licence
 
 =head1 DESCRIPTION
 
-add append licence text to your html,css,js ( etc. ) files...
+append licence text to your html,css,js ( etc. ) files...
 
 =head1 SYNOPSIS
 
