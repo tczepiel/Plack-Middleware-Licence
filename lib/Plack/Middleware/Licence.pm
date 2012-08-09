@@ -98,7 +98,7 @@ sub _get_licence {
 sub _merge_configs {
     my $self = shift;
 
-    %__content_mapping = () 
+    local %__content_mapping = () 
         if ( defined $self->use_defaults && ! $self->use_defaults );
     
     my $content_mapping ||= {
