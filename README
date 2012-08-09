@@ -1,0 +1,51 @@
+Plack-Middleware-Licence version 0.01
+=====================================
+
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+Plack
+
+DESCRIPTION
+
+
+    use Plack::Builder;
+    my $app = sub { ... };
+    builder {
+        enable 'Licence',
+            licence => 'the following software is incensed under GPLv3...';
+        $app;
+    };
+
+    # define the content types you want to handle
+    builder {
+        enable 'Licence', 
+            licene => 'by accepting this brick, you accept it as is.. without any warranty explicit or implied..',
+            use_defaults => 1|0,
+            content_type => {
+                'text/html' => {
+                    start => q{<!--},
+                    end   => q{-->}
+                },
+            };
+    };
+
+
+LICENCE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.16.0 or,
+at your option, any later version of Perl 5 you may have available.
+
+

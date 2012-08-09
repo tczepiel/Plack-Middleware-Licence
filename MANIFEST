@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Plack-Middleware-Licence.t
+lib/Plack/Middleware/Licence.pm
