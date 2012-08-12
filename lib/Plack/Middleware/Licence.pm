@@ -7,6 +7,7 @@ use parent 'Plack::Middleware';
 
 use Plack::Util::Accessor qw(licence content_mapping use_defaults);
 use Plack::Util;
+use List::Util qw(sum);
 
 our $VERSION = '0.1';
 
@@ -71,6 +72,10 @@ sub call {
     if ( my $mapping = $self->content_mapping->{ $content_type } ) {
         unshift @{ $response->[2] },
             $self->_get_licence($mapping);
+
+        my $length = sum( map { length $_ } @{ $response->[2] });
+
+        Plack::Util::header_set($response->[1],'Content-Length', $length);
     }
 
     $response;
